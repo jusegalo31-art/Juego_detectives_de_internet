@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detectives de Internet — Navegadores vs Buscadores</title>
+  <meta name="description" content="Recurso educativo interactivo para estudiantes de 5.º de primaria. Aprende de forma práctica la diferencia entre navegadores y buscadores de Internet con Nico el detective digital.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= SVGS & ICON REPOSITORY ================= -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Chrome Icon -->
+      <g id="icon-chrome">
+        <circle cx="50" cy="50" r="48" fill="#FFFFFF"/>
+        <path d="M50 2 A48 48 0 0 1 91.6 74 L50 74 L37.5 50 L50 2 Z" fill="#EA4335"/>
+        <path d="M91.6 74 A48 48 0 0 1 8.4 74 L29.2 38 L50 50 L91.6 74 Z" fill="#FBBC05"/>
+        <path d="M8.4 74 A48 48 0 0 1 50 2 L62.5 24 L37.5 50 L8.4 74 Z" fill="#34A853"/>
+        <circle cx="50" cy="50" r="22" fill="#FFFFFF"/>
+        <circle cx="50" cy="50" r="17.5" fill="#1A73E8"/>
+      </g>
+
+      <!-- Edge Icon -->
+      <g id="icon-edge">
+        <circle cx="50" cy="50" r="48" fill="#F0F9FF"/>
+        <path d="M50 4 C72 4 90 20 90 44 C90 60 76 74 60 74 C48 74 40 66 40 54 C40 40 54 32 66 32 C74 32 80 34 82 36 C80 20 66 12 50 12 C30 12 14 26 14 46 C14 70 32 94 54 94 C76 94 94 78 94 56 C94 54 94 52 93 50 C89 68 72 82 52 82 C32 82 22 66 22 50 C22 28 36 4 50 4 Z" fill="url(#edge-grad)"/>
+        <defs>
+          <linearGradient id="edge-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+            <stop offset="0%" stop-color="#0078D7"/>
+            <stop offset="50%" stop-color="#00BCF2"/>
+            <stop offset="100%" stop-color="#00B294"/>
+          </linearGradient>
+        </defs>
+      </g>
+
+      <!-- Firefox Icon -->
+      <g id="icon-firefox">
+        <circle cx="50" cy="50" r="48" fill="#1E1E38"/>
+        <!-- Globe -->
+        <circle cx="50" cy="50" r="38" fill="url(#ff-globe)"/>
+        <!-- Fox tail & body -->
+        <path d="M12 50 C12 28 30 12 52 10 C50 16 54 22 62 24 C72 26 80 18 80 10 C88 20 92 34 88 50 C84 68 70 82 50 84 C30 86 12 70 12 50 Z" fill="url(#ff-fox)"/>
+        <!-- Head -->
+        <path d="M60 22 C64 16 72 14 76 12 C74 20 70 26 64 30 C60 26 58 24 60 22 Z" fill="#FFE600"/>
+        <defs>
+          <radialGradient id="ff-globe" cx="40%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#4F75FF"/>
+            <stop offset="100%" stop-color="#141E61"/>
+          </radialGradient>
+          <linearGradient id="ff-fox" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF9400"/>
+            <stop offset="50%" stop-color="#FF4000"/>
+            <stop offset="100%" stop-color="#D10056"/>
+          </linearGradient>
+        </defs>
+      </g>
+
+      <!-- Google Search Icon -->
+      <g id="icon-google">
+        <circle cx="50" cy="50" r="48" fill="#FFFFFF"/>
+        <path d="M85 50.5 C85 47.5 84.7 45.2 84.2 43 H50 V57.2 H69.8 C69 61.5 66.2 65.2 62.4 67.7 V76.4 H74.2 C81.1 70 85 61.1 85 50.5 Z" fill="#4285F4"/>
+        <path d="M50 86 C60 86 68.3 82.7 74.2 76.4 L62.4 67.7 C59.1 70 54.9 71.4 50 71.4 C40.3 71.4 32.1 65.1 29.2 56.6 H17 V65.8 C23.2 78 35.6 86 50 86 Z" fill="#34A853"/>
+        <path d="M29.2 56.6 C28.4 54.3 28 51.7 28 49 C28 46.3 28.4 43.7 29.2 41.4 V32.2 H17 C14.3 37.4 12.8 43.5 12.8 49 C12.8 54.5 14.3 60.6 17 65.8 L29.2 56.6 Z" fill="#FBBC05"/>
+        <path d="M50 26.6 C55.5 26.6 60.4 28.5 64.3 32.1 L74.6 21.8 C68.3 16 60 12 50 12 C35.6 12 23.2 20 17 32.2 L29.2 41.4 C32.1 32.9 40.3 26.6 50 26.6 Z" fill="#EA4335"/>
+      </g>
+
+      <!-- Bing Search Icon -->
+      <g id="icon-bing">
+        <circle cx="50" cy="50" r="48" fill="#F0FDFA"/>
+        <path d="M28 14 L28 84 L44 76 L66 62 L54 50 L76 38 L48 24 L48 38 L38 34 L38 20 Z" fill="url(#bing-grad)"/>
+        <defs>
+          <linearGradient id="bing-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00839B"/>
+            <stop offset="60%" stop-color="#00A88F"/>
+            <stop offset="100%" stop-color="#2DD4BF"/>
+          </linearGradient>
+        </defs>
+      </g>
+
+      <!-- Detective Magnifying Glass -->
+      <g id="icon-magnifier">
+        <circle cx="40" cy="40" r="28" fill="none" stroke="#38BDF8" stroke-width="8"/>
+        <circle cx="40" cy="40" r="22" fill="#0284C7" fill-opacity="0.3"/>
+        <line x1="60" y1="60" x2="86" y2="86" stroke="#0284C7" stroke-width="12" stroke-linecap="round"/>
+        <line x1="60" y1="60" x2="86" y2="86" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+        <path d="M26 30 A14 14 0 0 1 44 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </g>
+
+      <!-- Detective Badge -->
+      <g id="icon-badge">
+        <polygon points="50,6 88,20 80,68 50,92 20,68 12,20" fill="#F59E0B" stroke="#FDE68A" stroke-width="3"/>
+        <polygon points="50,14 80,25 74,63 50,83 26,63 20,25" fill="#D97706"/>
+        <circle cx="50" cy="45" r="16" fill="#FDE68A"/>
+        <path d="M50 34 L53 42 L62 42 L55 47 L58 55 L50 50 L42 55 L45 47 L38 42 L47 42 Z" fill="#B45309"/>
+      </g>
+
+      <!-- Star Gold -->
+      <g id="icon-star">
+        <polygon points="50,8 62,36 94,38 68,58 76,88 50,70 24,88 32,58 6,38 38,36" fill="#FBBF24" stroke="#F59E0B" stroke-width="2"/>
+        <polygon points="50,18 59,38 80,40 62,54 68,76 50,62 32,76 38,54 20,40 41,38" fill="#FDE68A"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ================= CANVAS FOR CONFETTI & PARTICLES ================= -->
+  <canvas id="effects-canvas"></canvas>
+
+  <!-- ================= TOP APP BAR / HUD ================= -->
+  <header class="app-header" id="app-header">
+    <div class="header-left">
+      <div class="brand-badge">
+        <span class="brand-icon">🕵️</span>
+        <span class="brand-text">DETECTIVES DE INTERNET</span>
+      </div>
+      <div class="mission-indicator" id="mission-indicator" style="display: none;">
+        <span class="mission-dot"></span>
+        <span id="mission-title-hud">Nivel 1 de 6</span>
+      </div>
+    </div>
+
+    <div class="header-center" id="hud-progress-container" style="display: none;">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar-fill" style="width: 16%;"></div>
+      </div>
+      <div class="stars-counter" id="stars-counter">
+        <span class="star-icon">⭐</span>
+        <span id="total-stars-val">0</span> / 18
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="hud-btn hint-btn" id="btn-hint" title="Pedir una pista a Nico" style="display: none;">
+        <span class="btn-icon">💡</span>
+        <span class="btn-label">PISTA</span>
+      </button>
+
+      <button class="hud-btn map-btn" id="btn-map-nav" title="Volver al mapa de casos" style="display: none;">
+        <span class="btn-icon">🗺️</span>
+        <span class="btn-label">MAPA</span>
+      </button>
+
+      <button class="hud-btn audio-btn" id="btn-audio-toggle" title="Activar / Desactivar Sonido" aria-label="Control de sonido">
+        <span class="btn-icon" id="sound-icon">🔊</span>
+        <span class="btn-label" id="sound-label">ON</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="game-container" id="game-container">
+
+    <!-- ----------------- VIEW 0: PANTALLA INICIAL ----------------- -->
+    <section class="screen-view active-view" id="view-intro">
+      <div class="intro-backdrop">
+        <div class="cyber-grid"></div>
+        <div class="floating-orbs">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+      </div>
+
+      <div class="intro-content">
+        <div class="intro-hero-card">
+          <div class="agency-tag">AGENCIA DE INVESTIGACIÓN DIGITAL • 5.º DE PRIMARIA</div>
+          <h1 class="main-title">
+            <span class="title-emoji">🕵️‍♂️</span> DETECTIVES DE INTERNET
+          </h1>
+          <p class="main-subtitle">
+            "Descubre qué herramienta necesitas para encontrar la información."
+          </p>
+
+          <div class="concept-banner">
+            <div class="concept-item">
+              <span class="item-badge browser-badge">🌐 NAVEGADOR</span>
+              <span class="item-desc">Me permite <strong>entrar y usar</strong> páginas web</span>
+            </div>
+            <div class="vs-badge">≠</div>
+            <div class="concept-item">
+              <span class="item-badge search-badge">🔎 BUSCADOR</span>
+              <span class="item-desc">Me ayuda a <strong>encontrar información</strong> en Internet</span>
+            </div>
+          </div>
+
+          <div class="intro-character-spot">
+            <!-- Nico Avatar SVG -->
+            <div class="character-avatar" id="intro-nico-avatar">
+              <!-- Dynamically injected Nico SVG -->
+            </div>
+            <div class="speech-bubble">
+              <p>¡Hola, detective! Soy <strong>Nico</strong>. Tenemos 6 casos urgentes en la agencia. ¿Me ayudas a resolverlos usando las herramientas correctas de Internet?</p>
+            </div>
+          </div>
+
+          <div class="intro-actions">
+            <button class="primary-btn pulse-glow" id="btn-start-game">
+              <span class="btn-ico">▶️</span>
+              <span class="btn-text">COMENZAR MISIÓN</span>
+            </button>
+            <button class="secondary-btn" id="btn-how-to-play">
+              <span class="btn-ico">📖</span>
+              <span class="btn-text">¿CÓMO FUNCIONA?</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------- VIEW: MAPA DE MISIONES ----------------- -->
+    <section class="screen-view" id="view-map">
+      <div class="map-backdrop">
+        <div class="pinboard-texture"></div>
+      </div>
+
+      <div class="map-header">
+        <h2>🗺️ TABLERO DE CASOS DIGITALES</h2>
+        <p>Resuelve cada investigación para desbloquear el siguiente nivel y obtener tus estrellas de detective.</p>
+      </div>
+
+      <div class="missions-grid">
+        <!-- Level 1 -->
+        <div class="mission-card card-unlocked" id="mission-card-1" data-level="1">
+          <div class="card-status-badge">ACTIVO</div>
+          <div class="card-badge-circle level-green">🟢 1</div>
+          <div class="card-content">
+            <h3>¿Qué herramienta tengo?</h3>
+            <p>Conoce a los Navegadores (Chrome, Edge, Firefox) y cómo abren páginas web.</p>
+          </div>
+          <div class="card-stars" id="stars-level-1">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="1">ENTRAR AL CASO</button>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="mission-card card-locked" id="mission-card-2" data-level="2">
+          <div class="card-status-badge">BLOQUEADO</div>
+          <div class="card-badge-circle level-blue">🔵 2</div>
+          <div class="card-content">
+            <h3>Buscadores en acción</h3>
+            <p>Descubre el poder de Google y Bing para rastrear y encontrar datos perdidos.</p>
+          </div>
+          <div class="card-stars" id="stars-level-2">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="2" disabled>BLOQUEADO</button>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="mission-card card-locked" id="mission-card-3" data-level="3">
+          <div class="card-status-badge">BLOQUEADO</div>
+          <div class="card-badge-circle level-yellow">🟡 3</div>
+          <div class="card-content">
+            <h3>La búsqueda perdida</h3>
+            <p>Reconstruye la cadena completa: desde encender el computador hasta ver la página web.</p>
+          </div>
+          <div class="card-stars" id="stars-level-3">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="3" disabled>BLOQUEADO</button>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="mission-card card-locked" id="mission-card-4" data-level="4">
+          <div class="card-status-badge">BLOQUEADO</div>
+          <div class="card-badge-circle level-orange">🟠 4</div>
+          <div class="card-content">
+            <h3>¿Navegador o buscador?</h3>
+            <p>Oficina de emergencias: clasifica situaciones reales y asigna la herramienta correcta.</p>
+          </div>
+          <div class="card-stars" id="stars-level-4">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="4" disabled>BLOQUEADO</button>
+        </div>
+
+        <!-- Level 5 -->
+        <div class="mission-card card-locked" id="mission-card-5" data-level="5">
+          <div class="card-status-badge">BLOQUEADO</div>
+          <div class="card-badge-circle level-red">🔴 5</div>
+          <div class="card-content">
+            <h3>Detectives de Internet</h3>
+            <p>Construye palabras clave precisas y aprende qué consultas dan mejores resultados.</p>
+          </div>
+          <div class="card-stars" id="stars-level-5">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="5" disabled>BLOQUEADO</button>
+        </div>
+
+        <!-- Level 6 -->
+        <div class="mission-card card-locked" id="mission-card-6" data-level="6">
+          <div class="card-status-badge">BLOQUEADO</div>
+          <div class="card-badge-circle level-purple">🟣 6</div>
+          <div class="card-content">
+            <h3>La gran investigación</h3>
+            <p>Misión Océanos: investigación integral de principio a fin y certificación final.</p>
+          </div>
+          <div class="card-stars" id="stars-level-6">
+            <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+          </div>
+          <button class="card-play-btn" data-level="6" disabled>BLOQUEADO</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------- LEVEL CONTAINER ----------------- -->
+    <section class="screen-view" id="view-level-play">
+      <!-- Detective Stage Workspace -->
+      <div class="stage-container">
+        
+        <!-- Nico Assistant Bar / Dialog Box -->
+        <div class="nico-dialog-panel" id="nico-dialog-panel">
+          <div class="nico-character-frame">
+            <div class="nico-character-svg" id="stage-nico-svg">
+              <!-- Dynamically populated pose -->
+            </div>
+          </div>
+          <div class="dialog-content">
+            <div class="dialog-speaker">
+              <span class="speaker-name">NICO • Detective Digital</span>
+              <span class="dialog-phase" id="dialog-phase-tag">Fase 1</span>
+            </div>
+            <p class="dialog-text" id="dialog-speech-text">
+              ¡Cargando la misión detectivesca!...
+            </p>
+          </div>
+        </div>
+
+        <!-- Active Mission Gameplay Screen (Injected per level) -->
+        <div class="mission-stage-content" id="mission-stage-content">
+          <!-- Dynamic content loaded via script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------- VIEW: GRAN FINAL & CERTIFICADO ----------------- -->
+    <section class="screen-view" id="view-final">
+      <div class="final-celebration-card">
+        <div class="trophy-badge">🏆</div>
+        <h1 class="celebration-title">¡MISIÓN COMPLETADA!</h1>
+        <h2 class="celebration-subtitle">Eres un Detective Digital de Élite</h2>
+        
+        <p class="final-reflection">
+          Ahora comprendes con total claridad la diferencia fundamental de Internet:
+        </p>
+
+        <div class="summary-cards-grid">
+          <div class="summary-card nav-summary">
+            <div class="card-header-icon">🌐 NAVEGADOR</div>
+            <div class="app-icons-row">
+              <svg class="mini-app-icon"><use href="#icon-chrome"></use></svg>
+              <svg class="mini-app-icon"><use href="#icon-edge"></use></svg>
+              <svg class="mini-app-icon"><use href="#icon-firefox"></use></svg>
+            </div>
+            <p class="concept-highlight"><strong>Google Chrome, Microsoft Edge, Mozilla Firefox</strong></p>
+            <p class="summary-role">Es el programa que <strong>me permite entrar y utilizar páginas web</strong>.</p>
+          </div>
+
+          <div class="summary-arrow">
+            <span>Dentro del navegador utilizamos el buscador ➔</span>
+          </div>
+
+          <div class="summary-card search-summary">
+            <div class="card-header-icon">🔎 BUSCADOR</div>
+            <div class="app-icons-row">
+              <svg class="mini-app-icon"><use href="#icon-google"></use></svg>
+              <svg class="mini-app-icon"><use href="#icon-bing"></use></svg>
+            </div>
+            <p class="concept-highlight"><strong>Google, Bing</strong></p>
+            <p class="summary-role">Es el servicio que <strong>me ayuda a encontrar información</strong> en la inmensidad de la red.</p>
+          </div>
+        </div>
+
+        <div class="golden-rule-box">
+          <div class="rule-icon">💡</div>
+          <div class="rule-text">
+            <strong>Cadena de un Detective Digital:</strong><br>
+            <span class="chain-tag">💻 COMPUTADOR</span> ➔ 
+            <span class="chain-tag">🌐 NAVEGADOR</span> ➔ 
+            <span class="chain-tag">🔎 BUSCADOR</span> ➔ 
+            <span class="chain-tag">🔤 BÚSQUEDA</span> ➔ 
+            <span class="chain-tag">📋 RESULTADOS</span> ➔ 
+            <span class="chain-tag">🌐 PÁGINA WEB</span>
+          </div>
+        </div>
+
+        <!-- Official Diploma / Carnet Section -->
+        <div class="diploma-card" id="diploma-card">
+          <div class="diploma-seal">🕵️</div>
+          <div class="diploma-header">
+            <h3>DIPLOMA OFICIAL DE DETECTIVE DIGITAL</h3>
+            <p class="diploma-sub">COLEGIO MÉXICO • GRADO 5.º DE PRIMARIA</p>
+          </div>
+          <p class="diploma-body">
+            Se certifica que el / la estudiante:
+          </p>
+          <div class="diploma-name-box">
+            <input type="text" id="student-name-input" placeholder="Escribe tu nombre aquí..." value="Detective Investigador">
+          </div>
+          <p class="diploma-text">
+            Ha dominado con éxito la distinción funcional entre <strong>Navegadores y Buscadores de Internet</strong>, resolviendo con excelencia todos los casos de investigación digital.
+          </p>
+          <div class="diploma-footer">
+            <div class="dip-col">
+              <span class="dip-sign">Nico</span>
+              <span class="dip-role">Nico • Jefe de Detectives</span>
+            </div>
+            <div class="dip-col">
+              <span class="dip-stars">⭐⭐⭐</span>
+              <span class="dip-role" id="diploma-date-label">Fecha: 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="final-actions">
+          <button class="primary-btn" id="btn-print-diploma">
+            <span class="btn-ico">🖨️</span>
+            <span class="btn-text">IMPRIMIR / GUARDAR CARNET</span>
+          </button>
+          <button class="secondary-btn" id="btn-restart-game">
+            <span class="btn-ico">🔄</span>
+            <span class="btn-text">REINICIAR MISIONES</span>
+          </button>
+          <button class="secondary-btn" id="btn-return-map-from-final">
+            <span class="btn-ico">🗺️</span>
+            <span class="btn-text">VOLVER AL MAPA</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL: PISTAS PEDAGÓGICAS ================= -->
+  <div class="modal-overlay" id="hint-modal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-icon">💡</span>
+          <span>PISTA DEL DETECTIVE NICO</span>
+        </div>
+        <button class="modal-close-btn" id="btn-close-hint" aria-label="Cerrar pista">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="hint-avatar-spot" id="hint-avatar-spot"></div>
+        <p class="hint-text" id="hint-modal-text">
+          Recuerda: una herramienta te ayuda a entrar a páginas web y otra te ayuda a encontrar información.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-btn" id="btn-understood-hint">¡ENTENDIDO, NICO!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CÓMO JUGAR ================= -->
+  <div class="modal-overlay" id="tutorial-modal" aria-hidden="true" role="dialog">
+    <div class="modal-card tutorial-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-icon">📖</span>
+          <span>GUÍA DE INVESTIGACIÓN DIGITAL</span>
+        </div>
+        <button class="modal-close-btn" id="btn-close-tutorial" aria-label="Cerrar guía">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="tutorial-grid">
+          <div class="tutorial-item">
+            <div class="tut-icon">🖱️</div>
+            <h4>Explora y Haz Clic</h4>
+            <p>Toca o haz clic sobre los iconos para descubrir qué hace cada herramienta.</p>
+          </div>
+          <div class="tutorial-item">
+            <div class="tut-icon">🧩</div>
+            <h4>Arrastra o Selecciona</h4>
+            <p>Mueve las tarjetas a su lugar correcto o haz clic sobre ellas para clasificarlas.</p>
+          </div>
+          <div class="tutorial-item">
+            <div class="tut-icon">🔤</div>
+            <h4>Construye Búsquedas</h4>
+            <p>Organiza las palabras clave para formular preguntas claras en los buscadores.</p>
+          </div>
+          <div class="tutorial-item">
+            <div class="tut-icon">💡</div>
+            <h4>Usa tus Pistas</h4>
+            <p>Si tienes dudas, presiona el botón de Pista. ¡Nico te orientará en cada paso!</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="primary-btn" id="btn-close-tutorial-ok">¡ESTOY LISTO PARA INVESTIGAR!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: ÉXITO DE NIVEL ================= -->
+  <div class="modal-overlay" id="level-complete-modal" aria-hidden="true" role="dialog">
+    <div class="modal-card celebration-modal">
+      <div class="modal-header center-header">
+        <div class="modal-title celebration-modal-title">
+          <span class="modal-icon">🌟</span>
+          <span id="level-complete-title">¡CASO RESUELTO!</span>
+        </div>
+      </div>
+      <div class="modal-body center-body">
+        <div class="modal-stars-row" id="modal-stars-awarded">
+          <span class="pop-star">⭐</span>
+          <span class="pop-star">⭐</span>
+          <span class="pop-star">⭐</span>
+        </div>
+        <div class="level-complete-avatar" id="complete-avatar-spot"></div>
+        <p class="celebration-message" id="level-complete-message">
+          ¡Excelente deducción, detective! Has completado el caso.
+        </p>
+        <div class="learning-recap" id="learning-recap-box">
+          <!-- Short pedagogical takeaway -->
+        </div>
+      </div>
+      <div class="modal-footer center-footer">
+        <button class="primary-btn next-level-btn" id="btn-next-level">
+          <span class="btn-ico">🚀</span>
+          <span class="btn-text">SIGUIENTE CASO</span>
+        </button>
+        <button class="secondary-btn" id="btn-back-to-map-from-modal">
+          <span class="btn-ico">🗺️</span>
+          <span class="btn-text">VER MAPA</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript logic -->
+  <script src="script.js"></script>
+</body>
+</html>
